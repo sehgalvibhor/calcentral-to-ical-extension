@@ -3,10 +3,11 @@
     "version": "0.1",
     "description": "Downloads the enrolled courses schedule",
     "manifest_version": 2,
-    "permissions": ["downloads","https://berkeley.collegescheduler.com/*"],
+    "permissions": ["downloads","https://berkeley.collegescheduler.com/*","https://bcsweb.is.berkeley.edu/*"],
     "content_scripts": [{
-        "matches": ["https://berkeley.collegescheduler.com/*"],
-        "js": ["contentScript.js"],
+        "matches": ["https://berkeley.collegescheduler.com/*","https://bcsweb.is.berkeley.edu/*"],
+        "js": ["inject.js"],
         "run_at": "document_start"
-    }]
+    }],
+    "web_accessible_resources": ["injected.js"]
   }
