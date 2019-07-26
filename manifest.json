@@ -4,7 +4,7 @@
     "description": "Downloads the enrolled courses schedule",
     "manifest_version": 2,
     "permissions": ["downloads"],
-  "content_scripts": [{
+    "content_scripts": [{
         "js": ["contentScript.js"],
         "run_at": "document_start"
     }]
