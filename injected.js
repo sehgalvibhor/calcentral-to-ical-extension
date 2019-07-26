@@ -1,5 +1,4 @@
 (function(xhr) {
-
     var XHR = XMLHttpRequest.prototype;
 
     var open = XHR.open;
@@ -26,28 +25,19 @@
             var endTime = (new Date()).toISOString();
 
             var myUrl = this._url ? this._url.toLowerCase() : this._url;
-            console.log(myUrl);
-            if(myUrl) {
-
-                // here you get the RESPONSE HEADERS
+            if(myUrl.includes('api/')) {
                 var responseHeaders = this.getAllResponseHeaders();
-
-                if ( this.responseType != 'blob' && this.responseText) {
-                    // responseText is string or null
+                if (this.responseType != 'blob' && this.responseText) {
                     try {
-
-                        // here you get RESPONSE TEXT (BODY), in JSON format, so you can use JSON.parse
-                        var arr = this.responseText;
-
-                        // printing url, request headers, response headers, response body, to console
-
-                        //console.log(this._url);
-                        //console.log(JSON.parse(this._requestHeaders));
-                        //console.log(responseHeaders);
-                        console.log(JSON.parse(arr));                        
+                        var arr = JSON.parse(this.responseText);
+                        if(arr['warnings'].length==0){
+                            console.log(arr);
+                        }else{
+                            console.log("CalCentral to Ical : Conflict in Schedule, try again!")
+                        }
+                                                
 
                     } catch(err) {
-                        console.log("Error in responseType try catch");
                         console.log(err);
                     }
                 }
