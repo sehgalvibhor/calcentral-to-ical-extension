@@ -8,7 +8,7 @@
 
     XHR.open = function(method, url) {
         this._method = method;
-        this._url = url;
+        this._url = "https://berkeley.collegescheduler.com/api/terms/*";
         this._requestHeaders = {};
         this._startTime = (new Date()).toISOString();
 
