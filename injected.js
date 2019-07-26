@@ -40,9 +40,9 @@
 
                         // printing url, request headers, response headers, response body, to console
 
-                        console.log(this._url);
-                        console.log(JSON.parse(this._requestHeaders));
-                        console.log(responseHeaders);
+                        //console.log(this._url);
+                        //console.log(JSON.parse(this._requestHeaders));
+                        //console.log(responseHeaders);
                         console.log(JSON.parse(arr));                        
 
                     } catch(err) {
