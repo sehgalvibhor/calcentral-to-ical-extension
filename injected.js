@@ -8,7 +8,7 @@
 
     XHR.open = function(method, url) {
         this._method = method;
-        this._url = "https://berkeley.collegescheduler.com/api/terms/*";
+        this._url = url;
         this._requestHeaders = {};
         this._startTime = (new Date()).toISOString();
 
@@ -26,6 +26,7 @@
             var endTime = (new Date()).toISOString();
 
             var myUrl = this._url ? this._url.toLowerCase() : this._url;
+            console.log(myUrl);
             if(myUrl) {
 
                 // here you get the RESPONSE HEADERS
