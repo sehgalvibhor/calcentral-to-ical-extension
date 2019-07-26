@@ -3,7 +3,7 @@
     "version": "0.1",
     "description": "Downloads the enrolled courses schedule",
     "manifest_version": 2,
-    "permissions": ["downloads"],
+    "permissions": ["downloads","https://berkeley.collegescheduler.com/*"],
     "content_scripts": [{
         "matches": ["https://berkeley.collegescheduler.com/*"],
         "js": ["contentScript.js"],
