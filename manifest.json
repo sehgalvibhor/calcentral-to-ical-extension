@@ -1,0 +1,6 @@
+  {
+    "name": "Export 2019 Calcentral Calendar to ical",
+    "version": "0.1",
+    "description": "Downloads the enrolled courses schedule",
+    "manifest_version": 2
+  }
